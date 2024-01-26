@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { ProfilWrapper } from './Profile.styled';
 export default Profile;
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className="profile">
+    <ProfilWrapper>
       <div className="description">
         <img src={avatar} alt="User avatar" className="avatar" />
         <p className="name">{username}</p>
@@ -25,7 +26,7 @@ function Profile({ username, tag, location, avatar, stats }) {
           <span className="quantity">{stats.likes}</span>
         </li>
       </ul>
-    </div>
+    </ProfilWrapper>
   );
 }
 Profile.propTypes = {
