@@ -1,34 +1,48 @@
 import PropTypes from 'prop-types';
-
+import { getRandomHexColor } from './RandomColor';
+import {
+  StatisticsSection,
+  StatisticsTitle,
+  StatisticsList,
+  ListItem,
+  Label,
+  Percentage,
+} from './Statistics.styled';
 export default Statistics;
 
 function Statistics({ title, stats }) {
   if (title) {
     return (
-      <section className="statistics">
-        <h2 className="title">{title}</h2>
-        <ul className="stat-list">
+      <StatisticsSection>
+        <StatisticsTitle>{title}</StatisticsTitle>
+        <StatisticsList>
           {stats.map(stat => (
-            <li key={stat.id} className="item">
-              <span className="label">{stat.label}</span>
-              <span className="percentage">{stat.percentage}%</span>
-            </li>
+            <ListItem
+              key={stat.id}
+              style={{ backgroundColor: getRandomHexColor() }}
+            >
+              <Label>{stat.label}</Label>
+              <Percentage>{stat.percentage}%</Percentage>
+            </ListItem>
           ))}
-        </ul>
-      </section>
+        </StatisticsList>
+      </StatisticsSection>
     );
   }
   return (
-    <section className="statistics">
-      <ul className="stat-list">
+    <StatisticsSection>
+      <StatisticsList>
         {stats.map(stat => (
-          <li key={stat.id} className="item">
-            <span className="label">{stat.label}</span>
-            <span className="percentage">{stat.percentage}%</span>
-          </li>
+          <ListItem
+            key={stat.id}
+            style={{ backgroundColor: getRandomHexColor() }}
+          >
+            <Label>{stat.label}</Label>
+            <Percentage>{stat.percentage}%</Percentage>
+          </ListItem>
         ))}
-      </ul>
-    </section>
+      </StatisticsList>
+    </StatisticsSection>
   );
 }
 Statistics.propTypes = {
