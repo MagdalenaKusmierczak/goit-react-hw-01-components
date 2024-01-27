@@ -1,31 +1,42 @@
 import PropTypes from 'prop-types';
-import { ProfilWrapper } from './Profile.styled';
+import {
+  ProfilWrapper,
+  DescriptionWrapper,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+  StatsList,
+  StatsListItem,
+  StatsListLabel,
+  StatsListQuantity,
+} from './Profile.styled';
 export default Profile;
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
     <ProfilWrapper>
-      <div className="description">
-        <img src={avatar} alt="User avatar" className="avatar" />
-        <p className="name">{username}</p>
-        <p className="tag">@{tag}</p>
-        <p className="location">{location}</p>
-      </div>
+      <DescriptionWrapper>
+        <Avatar src={avatar} alt="User avatar" />
+        <Name>{username}</Name>
+        <Tag>@{tag}</Tag>
+        <Location>{location}</Location>
+      </DescriptionWrapper>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers</span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views</span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes</span>
-          <span className="quantity">{stats.likes}</span>
-        </li>
-      </ul>
+      <StatsList>
+        <StatsListItem>
+          <StatsListLabel>Followers</StatsListLabel>
+          <StatsListQuantity>{stats.followers}</StatsListQuantity>
+        </StatsListItem>
+        <StatsListItem>
+          <StatsListLabel>Views</StatsListLabel>
+          <StatsListQuantity>{stats.views}</StatsListQuantity>
+        </StatsListItem>
+        <StatsListItem>
+          <StatsListLabel>Likes</StatsListLabel>
+          <StatsListQuantity>{stats.likes}</StatsListQuantity>
+        </StatsListItem>
+      </StatsList>
     </ProfilWrapper>
   );
 }
