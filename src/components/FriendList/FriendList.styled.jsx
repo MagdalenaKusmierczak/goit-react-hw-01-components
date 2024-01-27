@@ -31,5 +31,5 @@ export const Status = styled.span`
   height: 30px;
   border-radius: 50%;
   margin-inline: 20px;
-  background-color: ${friend => (friend.statusType ? 'green' : 'red')};
+  background-color: ${friend => (friend.status ? 'green' : 'red')};
 `;

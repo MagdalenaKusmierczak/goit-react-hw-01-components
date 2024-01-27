@@ -6,7 +6,7 @@ export default FriendListItem;
 function FriendListItem({ avatar, name, isOnline }) {
   return (
     <ListItem>
-      <Status statusType={isOnline}></Status>
+      <Status status={isOnline}></Status>
       <Avatar src={avatar} alt="User avatar" width="48" />
       <Name>{name}</Name>
     </ListItem>
