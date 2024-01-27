@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { getRandomHexColor } from './getRandomHexColor.jsx';
 import {
   StatisticsSection,
   StatisticsTitle,
@@ -9,6 +8,11 @@ import {
   Percentage,
 } from './Statistics.styled.jsx';
 export default Statistics;
+
+const getRandomHexColor = () =>
+  `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 
 function Statistics({ title, stats }) {
   if (title) {
