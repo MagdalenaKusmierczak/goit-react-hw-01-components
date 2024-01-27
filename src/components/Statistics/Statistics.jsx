@@ -7,7 +7,7 @@ import {
   ListItem,
   Label,
   Percentage,
-} from './Statistics.styled';
+} from './Statistics.styled.jsx';
 export default Statistics;
 
 function Statistics({ title, stats }) {
