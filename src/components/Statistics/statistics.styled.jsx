@@ -38,9 +38,11 @@ export const ListItem = styled.li`
 export const Label = styled.span`
   padding-block: 10px;
   font-size: 25px;
+  color: white;
 `;
 export const Percentage = styled.span`
   padding-block: 10px;
   font-weight: bold;
   font-size: 30px;
+  color: white;
 `;

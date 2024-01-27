@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ProfilWrapper = styled.div`
-  margin: 0 auto;
+  margin: 15 auto;
   width: 300px;
   background-color: #eeeeee;
   padding: 100px;
