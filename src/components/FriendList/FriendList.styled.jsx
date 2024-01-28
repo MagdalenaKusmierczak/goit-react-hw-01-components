@@ -25,11 +25,17 @@ export const Name = styled.p`
   padding-left: 20px;
   margin-block: 0px;
 `;
-export const Status = styled.span`
+const Status = styled.span`
   display: block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   margin-inline: 20px;
-  background-color: ${friend => (friend.status ? 'green' : 'red')};
+`;
+
+export const StatusOn = styled(Status)`
+  background-color: green;
+`;
+export const StatusOff = styled(Status)`
+  background-color: red;
 `;
