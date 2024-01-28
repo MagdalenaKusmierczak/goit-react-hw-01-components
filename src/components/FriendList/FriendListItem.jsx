@@ -12,7 +12,8 @@ export default FriendListItem;
 function FriendListItem({ avatar, name, isOnline }) {
   return (
     <ListItem>
-      {isOnline && <StatusOn></StatusOn> || <StatusOff></StatusOff>}
+      {isOnline && <StatusOn></StatusOn>}
+      {!isOnline && <StatusOff></StatusOff>}
       <Avatar src={avatar} alt="User avatar" width="48" />
       <Name>{name}</Name>
     </ListItem>
