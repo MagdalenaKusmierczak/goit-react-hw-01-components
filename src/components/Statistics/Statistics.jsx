@@ -11,10 +11,9 @@ import {
 export default Statistics;
 
 function Statistics({ title, stats }) {
-  if (title) {
     return (
       <StatisticsSection>
-        <StatisticsTitle>{title}</StatisticsTitle>
+       {title &&  <StatisticsTitle>{title}</StatisticsTitle>}
         <StatisticsList>
           {stats.map(stat => (
             <ListItem
@@ -28,22 +27,6 @@ function Statistics({ title, stats }) {
         </StatisticsList>
       </StatisticsSection>
     );
-  }
-  return (
-    <StatisticsSection>
-      <StatisticsList>
-        {stats.map(stat => (
-          <ListItem
-            key={stat.id}
-            style={{ backgroundColor: getRandomHexColor() }}
-          >
-            <Label>{stat.label}</Label>
-            <Percentage>{stat.percentage}%</Percentage>
-          </ListItem>
-        ))}
-      </StatisticsList>
-    </StatisticsSection>
-  );
 }
 Statistics.propTypes = {
   title: PropTypes.string,
